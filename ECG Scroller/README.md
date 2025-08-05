@@ -16,7 +16,7 @@ Ideal for educational purposes, biomedical demos, or Arduino-based signal simula
 
 - 💡 **LED Matrix Scrolling**: Displays an ECG waveform across 4 chained 8×8 matrices.
 - 🎵 **Audible Pulse**: Buzzer beeps on each R-peak to mimic heartbeat sounds.
-- ⏱️ **Scroll Speed Control**: Use a 4×4 matrix keypad to speed up or slow down scrolling.
+- ⏱️ **Scroll Speed Control**: Use a 4×3 matrix keypad to speed up or slow down scrolling.
 - 📟 **BPM Display**: LCD shows beats per minute calculated from pulse timing.
 - 🔄 **Timer1-Based Scrolling**: Uses hardware timer interrupt for consistent display updates.
 - 🧪 **Proteus Simulation**: Includes `.DSN` Proteus file for virtual circuit testing.
@@ -26,8 +26,8 @@ Ideal for educational purposes, biomedical demos, or Arduino-based signal simula
 ## 🔧 Hardware Requirements
 
 - Arduino Uno (or compatible board)  
-- 4× MAX7219 8×8 LED matrix modules  
-- 4×4 matrix keypad  
+- 2× MAX7219 + 8×8 LED matrix modules  
+- 4×3 matrix keypad  
 - 16×2 LCD with I2C backpack  
 - Passive buzzer  
 - Jumper wires & breadboard
