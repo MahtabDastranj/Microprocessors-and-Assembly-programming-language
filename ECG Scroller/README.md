@@ -94,11 +94,4 @@ You can visualize the matrix output and test the keypad and buzzer responses vir
 
 ## 📷 Preview
 
-*(Add a photo or GIF of the setup in action here)*
 
----
-
-## 📄 License
-
-This project is open-source and distributed under the MIT License.  
-Feel free to modify and use it in your own applications.
