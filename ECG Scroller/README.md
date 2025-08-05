@@ -16,12 +16,12 @@ This Arduino-based project simulates a realistic ECG (Electrocardiogram) wavefor
 
 ### 🔌 Arduino Code Variants
 
-| File Name                                  | Input Type    | Timer1 Used | Description |
-|-------------------------------------------|---------------|-------------|-------------|
-| `ECG_Scroller_Keypad.ino`                 | Keypad        | ❌ No       | Basic keypad control to adjust scroll speed |
-| `ECG_scroller_interrupt_keypad.ino`           | Keypad        | ✅ Yes      | Adds non-blocking scroll using hardware timer |
-| `ECG_Scroller_PushButton.ino`             | Push Button   | ❌ No       | Uses buttons instead of keypad for speed control |
-| `ECG_scroller_push_button_interrupt.ino`       | Push Button   | ✅ Yes      | Timer interrupt version for button-controlled scroll |
+| File Name                                | Input Type    | Timer1 Used | Description |
+|------------------------------------------|---------------|-------------|-------------|
+| `ECG_Scroller_Keypad.ino`                | Keypad        | ❌ No       | Basic keypad control to adjust scroll speed |
+| `ECG_scroller_interrupt_keypad.ino`      | Keypad        | ✅ Yes      | Adds non-blocking scroll using hardware timer |
+| `ECG_Scroller_Push_button.ino`           | Push Button   | ❌ No       | Uses buttons instead of keypad for speed control |
+| `ECG_scroller_push_button_interrupt.ino` | Push Button   | ✅ Yes      | Timer interrupt version for button-controlled scroll |
 
 Each version scrolls an ECG waveform, pulses a buzzer at R-peaks, and calculates heart rate based on the waveform cycle.
 
@@ -31,8 +31,8 @@ Each version scrolls an ECG waveform, pulses a buzzer at R-peaks, and calculates
 
 | File Name                             | Description |
 |--------------------------------------|-------------|
-| `ECG_Scroller_Keypad.dsn`            | Simulates the keypad-controlled ECG system |
-| `ECG_Scroller_PushButton.dsn`        | Simulates the push-button version |
+| `proteus_schematic_keypad.pdsprj`            | Simulates the keypad-controlled ECG system |
+| `proteus_schematic_push_button.pdsprj`        | Simulates the push-button version |
 
 Both include complete wiring for Arduino Uno, 4x MAX7219 LED matrices, LCD, buzzer, and user inputs.
 
