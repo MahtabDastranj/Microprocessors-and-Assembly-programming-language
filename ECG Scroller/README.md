@@ -103,4 +103,4 @@ Both include complete wiring for Arduino Uno, 4x MAX7219 LED matrices, LCD, buzz
 
 ![1](schematic/keypad.png)
 
-![2](ECG Scroller/schematic/with_button.png)
+![2](schematic/with_button.png)
