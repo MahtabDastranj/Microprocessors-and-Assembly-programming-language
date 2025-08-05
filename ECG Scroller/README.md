@@ -93,7 +93,7 @@ Both include complete wiring for Arduino Uno, 4x MAX7219 LED matrices, LCD, buzz
 
 ## 🧪 Simulating in Proteus
 
-1. Open either `ECG_Scroller_Keypad.dsn` or `ECG_Scroller_PushButton.dsn` in Proteus 8.9 or later.
+1. Open either `proteus_schematic_keypad.pdsprj` or `proteus_schematic_push_button.pdsprj` in Proteus 8.9 or later.
 2. Double-click the Arduino component and load the compiled `.hex` from Arduino IDE (`Sketch → Export Compiled Binary`).
 3. Run the simulation to view LED matrix ECG waveform, use inputs, and observe buzzer and LCD.
 
