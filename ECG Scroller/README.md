@@ -1,53 +1,68 @@
 
-# 🫀 ECG Scroller with MAX7219 and Buzzer – Arduino Project
+# 🫀 ECG Scroller with LED Matrix, Buzzer, and BPM – Arduino Project
 
-This project simulates an ECG (electrocardiogram) waveform using an LED matrix display driven by the MAX7219 module. It includes features such as:
+This Arduino-based project simulates a realistic ECG (Electrocardiogram) waveform using LED matrix displays controlled by MAX7219 modules. It includes multiple input and timing configurations using:
 
-- Adjustable scroll speed via keypad input  
-- Buzzer pulse synchronized with the R-peak of the ECG  
-- Real-time heart rate (BPM) display on a 16×2 LCD  
-- Debounced keypad control for smooth user interaction  
+- A **Keypad** or **Push Button** for scroll speed control
+- Optional **Timer1 Interrupt** for non-blocking updates
+- Real-time **BPM display** on a 16x2 LCD
+- **Proteus simulations** for both configurations
 
-Ideal for educational purposes, biomedical demos, or Arduino-based signal simulations.
+> This is ideal for biomedical demos, Arduino learners, and embedded systems students.
+
+---
+
+## 📁 File Overview
+
+### 🔌 Arduino Code Variants
+
+| File Name                                  | Input Type    | Timer1 Used | Description |
+|-------------------------------------------|---------------|-------------|-------------|
+| `ECG_Scroller_Keypad.ino`                 | Keypad        | ❌ No       | Basic keypad control to adjust scroll speed |
+| `ECG_Scroller_Keypad_Timer.ino`           | Keypad        | ✅ Yes      | Adds non-blocking scroll using hardware timer |
+| `ECG_Scroller_PushButton.ino`             | Push Button   | ❌ No       | Uses buttons instead of keypad for speed control |
+| `ECG_Scroller_PushButton_Timer.ino`       | Push Button   | ✅ Yes      | Timer interrupt version for button-controlled scroll |
+
+Each version scrolls an ECG waveform, pulses a buzzer at R-peaks, and calculates heart rate based on the waveform cycle.
+
+---
+
+### 🧪 Proteus Simulations
+
+| File Name                             | Description |
+|--------------------------------------|-------------|
+| `ECG_Scroller_Keypad.dsn`            | Simulates the keypad-controlled ECG system |
+| `ECG_Scroller_PushButton.dsn`        | Simulates the push-button version |
+
+Both include complete wiring for Arduino Uno, 4x MAX7219 LED matrices, LCD, buzzer, and user inputs.
 
 ---
 
 ## 🚀 Features
 
-- 💡 **LED Matrix Scrolling**: Displays an ECG waveform across 4 chained 8×8 matrices.
-- 🎵 **Audible Pulse**: Buzzer beeps on each R-peak to mimic heartbeat sounds.
-- ⏱️ **Scroll Speed Control**: Use a 4×3 matrix keypad to speed up or slow down scrolling.
-- 📟 **BPM Display**: LCD shows beats per minute calculated from pulse timing.
-- 🔄 **Timer1-Based Scrolling**: Uses hardware timer interrupt for consistent display updates.
-- 🧪 **Proteus Simulation**: Includes `.DSN` Proteus file for virtual circuit testing.
+- ✅ ECG waveform scrolling across 4 chained 8x8 LED matrices
+- ✅ Heartbeat audio on R-peak using a buzzer
+- ✅ Scroll speed control via keypad or push buttons
+- ✅ Real-time BPM display on I2C 16x2 LCD
+- ✅ Debounced input handling
+- ✅ Optional Timer1 hardware interrupt for smooth, non-blocking updates
+- ✅ Proteus circuit simulation files for both versions
 
 ---
 
 ## 🔧 Hardware Requirements
 
 - Arduino Uno (or compatible board)  
-- 2× MAX7219 + 8×8 LED matrix modules  
-- 4×3 matrix keypad  
+- 4× MAX7219 8×8 LED matrix modules  
+- 4×4 Matrix Keypad **or** Push Buttons  
 - 16×2 LCD with I2C backpack  
-- Passive buzzer  
-- Jumper wires & breadboard
+- Passive Buzzer  
+- Jumper Wires & Breadboard  
+- PC with Proteus 8.9+ (for simulation)
 
 ---
 
-## 🗂️ File Structure
-
-- `ECG_Scroller.ino` – Main Arduino sketch  
-- `ECG_Scroller.dsn` – Proteus simulation file  
-- `Proteus_Output.bmp` – Snapshot of the simulated output  
-- `ECG_Scroller.LYT` – Proteus layout configuration (if present)  
-- Libraries:
-  - `LedControl.h` for MAX7219
-  - `Keypad.h` for keypad input
-  - `LiquidCrystal_I2C.h` for I2C LCD control
-
----
-
-## 🔌 Wiring Overview
+## 📟 Pin Mapping (Default)
 
 | Component       | Arduino Pin     |
 |----------------|------------------|
@@ -55,43 +70,37 @@ Ideal for educational purposes, biomedical demos, or Arduino-based signal simula
 | MAX7219 CLK    | 11               |
 | MAX7219 CS     | 10               |
 | Buzzer         | 9                |
-| Keypad (4x4)   | 2, 3, 4, 5, 6, 7, 8, A0 |
-| LCD SDA/SCL    | A4 (SDA), A5 (SCL) |
+| Keypad Rows    | 2, 3, 4, 5       |
+| Keypad Columns | 6, 7, 8, A0      |
+| Push Buttons   | 2, 3             |
+| LCD I2C        | A4 (SDA), A5 (SCL) |
 
-> Make sure to power the MAX7219 with 5V and GND. Connect all modules properly to avoid flickering or noise.
+> Pins may vary per `.ino` file – check the code comments.
 
 ---
 
-## 🛠️ Installation & Upload
+## ⚙️ Setup Instructions
 
 1. Install the following libraries via Arduino Library Manager:
-   - **LedControl**
-   - **Keypad**
-   - **LiquidCrystal_I2C**
-2. Open `ECG_Scroller.ino` in the Arduino IDE.
-3. Select the correct board and COM port.
-4. Upload the sketch.
+   - `LedControl` (for MAX7219)
+   - `Keypad` (for keypad input)
+   - `LiquidCrystal_I2C` (for I2C LCD control)
+2. Connect components as per the schematic.
+3. Open one of the `.ino` files depending on your hardware setup.
+4. Compile and upload to the Arduino Uno.
 
 ---
 
-## 🎮 How to Use
+## 🧪 Simulating in Proteus
 
-- **Start:** ECG waveform scrolls immediately after power-up.
-- **Adjust Speed:** Use keypad numbers to change scroll speed (lower = faster).
-- **Heartbeat Sound:** Buzzer emits a pulse at each detected peak.
-- **View BPM:** Live heart rate shown on the LCD.
-
----
-
-## 🧪 Proteus Simulation
-
-If you do not have hardware available, open `ECG_Scroller.dsn` in Proteus to simulate the complete ECG Scroller circuit.  
-You can visualize the matrix output and test the keypad and buzzer responses virtually.
-
-> Note: Proteus 8.9 or later is recommended for compatibility.
+1. Open either `ECG_Scroller_Keypad.dsn` or `ECG_Scroller_PushButton.dsn` in Proteus 8.9 or later.
+2. Double-click the Arduino component and load the compiled `.hex` from Arduino IDE (`Sketch → Export Compiled Binary`).
+3. Run the simulation to view LED matrix ECG waveform, use inputs, and observe buzzer and LCD.
 
 ---
 
-## 📷 Preview
+## 🖼️ Preview
 
+![2](ECG Scroller/schematic/keypad.png)
 
+![2](ECG Scroller/schematic/with_button.png)
