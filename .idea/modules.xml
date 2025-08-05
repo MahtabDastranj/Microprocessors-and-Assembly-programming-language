@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../thesis/EEG-signal-processing/.idea/EEG-signal-processing.iml" filepath="$PROJECT_DIR$/../../../thesis/EEG-signal-processing/.idea/EEG-signal-processing.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Microprocessors-and-Assembly-programming-language.iml" filepath="$PROJECT_DIR$/.idea/Microprocessors-and-Assembly-programming-language.iml" />
     </modules>
   </component>
