@@ -54,7 +54,7 @@ Both include complete wiring for Arduino Uno, 4x MAX7219 LED matrices, LCD, buzz
 
 - Arduino Uno (or compatible board)  
 - 4× MAX7219 8×8 LED matrix modules  
-- 4×4 Matrix Keypad **or** Push Buttons  
+- 4×3 Matrix Keypad **or** Push Buttons  
 - 16×2 LCD with I2C backpack  
 - Passive Buzzer  
 - Jumper Wires & Breadboard  
@@ -101,6 +101,6 @@ Both include complete wiring for Arduino Uno, 4x MAX7219 LED matrices, LCD, buzz
 
 ## 🖼️ Preview
 
-![2](ECG Scroller/schematic/keypad.png)
+![1](schematic/keypad.png)
 
 ![2](ECG Scroller/schematic/with_button.png)
